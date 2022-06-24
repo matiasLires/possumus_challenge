@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchCharacters } from '../../functions';
+import { CharacterCard } from '../CharacterCard';
 
 export const CharactersList = () => {
 	const [listCharacters, setListCharacters] = useState([]);
@@ -14,8 +15,10 @@ export const CharactersList = () => {
 	return (
 		<div>
 			{listCharacters.length &&
-				listCharacters.map((ch: { name: string }, i) => (
-					<div key={i}>{ch.name}</div>
+				listCharacters.map((character, i) => (
+					<div key={i}>
+						<CharacterCard character={character} />
+					</div>
 				))}
 		</div>
 	);
