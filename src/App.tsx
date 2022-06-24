@@ -1,12 +1,10 @@
 import './App.css';
-import { CharactersList } from './components';
+import { RenderRoutes } from './routes';
 
-function App() {
+export function App() {
 	return (
 		<div className='App'>
-			<CharactersList />
+			<RenderRoutes />
 		</div>
 	);
 }
-
-export default App;
