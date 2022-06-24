@@ -4,6 +4,7 @@ import { CharacterCard } from '../CharacterCard';
 
 export const CharactersList = () => {
 	const [listCharacters, setListCharacters] = useState([]);
+
 	useEffect(() => {
 		async function fetchData() {
 			const list = await fetchAllCharacters();
@@ -11,7 +12,7 @@ export const CharactersList = () => {
 		}
 		fetchData();
 	}, []);
-	console.log('listCharacters', listCharacters);
+
 	return (
 		<div>
 			{listCharacters.length ? (

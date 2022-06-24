@@ -1,3 +1,1 @@
-export type Character = {
-	character: { name: string; url: string };
-};
+export type Character = { name: string; url: string };
