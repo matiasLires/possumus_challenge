@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { fetchCharacter } from '../../functions';
-import { Character } from '../../types';
 interface CharacterState {
-	character: Character;
+	character: {
+		name: string;
+		url: string;
+		birth_year: string;
+		gender: string;
+		height: string;
+		eye_color: string;
+		hair_color: string;
+		skin_color: string;
+	};
 }
 
 export const CharacterDetails = () => {

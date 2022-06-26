@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import { fetchAllCharacters } from '../../functions';
 import { CharacterCard } from '../CharacterCard';
 
+interface CharacterListProps {
+	name: String;
+	url: String;
+}
+
 export const CharactersList = () => {
 	const [listCharacters, setListCharacters] = useState([]);
 
@@ -17,9 +22,9 @@ export const CharactersList = () => {
 		<>
 			{listCharacters.length ? (
 				<div className=' bg-white bg-opacity-30 flex flex-col justify-center items-center m-auto mt-10 h-full w-fit p-5 rounded-lg border-2 border-yellow-50 shadow-yellow-300 shadow-xl'>
-					{listCharacters.map((character, i) => (
+					{listCharacters.map(({ name, url }: CharacterListProps, i) => (
 						<div key={i}>
-							<CharacterCard character={character} />
+							<CharacterCard name={name} url={url} />
 						</div>
 					))}
 				</div>
